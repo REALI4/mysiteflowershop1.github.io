@@ -1,0 +1,254 @@
+html {
+  scroll-behavior: smooth; /* Плавная прокрутка страницы */
+}
+
+* {
+  margin: 0; /* Убираем отступы */
+  padding: 0; /* Убираем поля */
+  box-sizing: border-box; /* Учитываем отступы и поля внутри элемента */
+}
+
+body {
+  font-family: 'Arial', sans-serif; /* Шрифт страницы */
+  background-color: #121212; /* Цвет фона */
+  color: white; /* Цвет текста */
+  line-height: 1.6; /* Межстрочный интервал */
+}
+
+/* Header */
+header {
+  display: flex; /* Используем flexbox для расположения элементов */
+  justify-content: space-between; /* Размещение элементов по краям */
+  align-items: center; /* Вертикальное выравнивание */
+  padding: 20px 50px; /* Отступы внутри header */
+  background-color: #121212; /* Фон header */
+  border-bottom: 2px solid #800020; /* Нижняя граница */
+}
+
+header .logo h1 {
+  font-size: 32px; /* Размер шрифта логотипа */
+  color: #800020; /* Цвет логотипа */
+  font-family: 'Courier New', Courier, monospace; /* Шрифт логотипа */
+  transition: transform 0.3s; /* Плавное увеличение при наведении */
+}
+
+header .logo h1:hover {
+  transform: scale(1.1); /* Увеличение логотипа при наведении */
+}
+
+/* Navigation */
+nav {
+  position: relative; /* Позиционирование для dropdown */
+}
+
+nav ul {
+  list-style-type: none; /* Убираем маркеры в списке */
+  display: flex; /* Горизонтальное расположение элементов */
+  gap: 40px; /* Отступы между элементами */
+  padding: 10px 0; /* Отступы сверху и снизу */
+  margin: 0; /* Убираем внешние отступы */
+}
+
+nav ul li {
+  font-size: 16px; /* Размер шрифта для пунктов меню */
+}
+
+nav ul li a {
+  color: white; /* Цвет ссылок */
+  text-decoration: none; /* Убираем подчеркивание */
+  transition: color 0.3s, transform 0.3s; /* Плавное изменение цвета и масштаба */
+  padding: 5px 10px; /* Внутренние отступы */
+  border-radius: 5px; /* Скругленные углы */
+}
+
+nav ul li a:hover {
+  color: #800020; /* Цвет текста при наведении */
+  background-color: white; /* Фон при наведении */
+  transform: scale(1.1); /* Увеличение при наведении */
+}
+
+/* Dropdown menu */
+nav ul .dropdown {
+  position: relative; /* Позиционирование для выпадающего меню */
+}
+
+nav ul .dropdown-content {
+  display: none; /* Скрыто по умолчанию */
+  position: absolute; /* Абсолютное позиционирование */
+  background-color: #222; /* Цвет фона для dropdown */
+  min-width: 160px; /* Минимальная ширина */
+  border-radius: 5px; /* Скругленные углы */
+  top: 100%; /* Позиционируем под пунктом меню */
+  left: 0; /* Выравниваем по левому краю */
+  z-index: 1; /* Поверх остальных элементов */
+}
+
+nav ul .dropdown:hover .dropdown-content {
+  display: block; /* Показываем при наведении */
+}
+
+nav ul .dropdown-content a {
+  color: white; /* Цвет текста */
+  padding: 12px 16px; /* Внутренние отступы */
+  text-decoration: none; /* Убираем подчеркивание */
+  display: block; /* Блочное отображение */
+}
+
+nav ul .dropdown-content a:hover {
+  background-color: #800020; /* Цвет фона при наведении */
+  color: white; /* Цвет текста при наведении */
+}
+
+/* Contact and buttons */
+.contact a {
+  color: white; /* Цвет ссылок в разделе контактов */
+  text-decoration: none; /* Убираем подчеркивание */
+  margin-right: 30px; /* Отступ справа */
+}
+
+button {
+  background-color: #850122; /* Цвет фона кнопок */
+  color: white; /* Цвет текста на кнопке */
+  border: none; /* Без границы */
+  padding: 12px 25px; /* Внутренние отступы */
+  border-radius: 5px; /* Скругленные углы */
+  cursor: pointer; /* Курсор при наведении */
+  transition: background-color 0.3s; /* Плавная смена фона при наведении */
+}
+
+button:hover {
+  background-color: #660018; /* Фон кнопки при наведении */
+}
+
+/* Catalog section */
+.catalog {
+  display: flex; /* Используем flexbox для карточек товаров */
+  justify-content: center; /* Центрируем по горизонтали */
+  gap: 40px; /* Отступы между карточками */
+  flex-wrap: wrap; /* Перенос элементов при необходимости */
+  padding: 40px 0; /* Отступы сверху и снизу */
+}
+
+.product-card {
+  background-color: white; /* Цвет фона карточек товаров */
+  border-radius: 8px; /* Скругленные углы */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень от карточки */
+  width: 320px; /* Ширина карточки */
+  text-align: center; /* Выравнивание текста по центру */
+  padding: 25px; /* Внутренние отступы */
+  transition: transform 0.3s ease; /* Плавное перемещение */
+  overflow: hidden; /* Обрезаем содержимое, выходящее за пределы */
+}
+
+.product-card:hover {
+  transform: translateY(-10px); /* Поднимаем карточку при наведении */
+}
+
+.product-card img {
+  width: 100%; /* Ширина изображения */
+  height: 250px; /* Высота изображения */
+  object-fit: cover; /* Обрезка изображения по размеру */
+  border-radius: 8px; /* Скругленные углы */
+  margin-bottom: 20px; /* Отступ снизу */
+}
+
+.product-card h3 {
+  margin-top: 15px; /* Отступ сверху */
+  font-size: 24px; /* Размер шрифта */
+  color: #333; /* Цвет текста */
+}
+
+.product-card p {
+  font-size: 20px; /* Размер шрифта */
+  color: #555; /* Цвет текста */
+  margin: 10px 0; /* Отступы сверху и снизу */
+}
+
+.product-card button {
+  background-color: #800020; /* Цвет фона кнопки */
+  color: white; /* Цвет текста */
+  border: none; /* Без границы */
+  padding: 12px 25px; /* Внутренние отступы */
+  border-radius: 5px; /* Скругленные углы */
+  cursor: pointer; /* Курсор при наведении */
+  transition: background-color 0.3s; /* Плавная смена фона */
+  font-size: 18px; /* Размер шрифта */
+}
+
+.product-card button:hover {
+  background-color: #660018; /* Фон кнопки при наведении */
+}
+
+/* About and Contact sections */
+section#about, section#contact {
+  padding: 40px; /* Отступы внутри секций */
+  background-color: #121212; /* Фон секции */
+  color: white; /* Цвет текста */
+}
+
+footer {
+  text-align: center; /* Выравнивание текста по центру */
+  padding: 20px; /* Внутренние отступы */
+  background-color: #222; /* Цвет фона */
+  color: white; /* Цвет текста */
+  font-size: 14px; /* Размер шрифта */
+}
+
+/* Popup styles */
+.popup {
+  visibility: hidden; /* Скрыто по умолчанию */
+  width: 250px; /* Ширина попапа */
+  background-color: #800020; /* Цвет фона попапа */
+  color: white; /* Цвет текста */
+  text-align: center; /* Выравнивание текста по центру */
+  border-radius: 5px; /* Скругленные углы */
+  padding: 10px 0; /* Отступы */
+  position: fixed; /* Фиксированное позиционирование */
+  z-index: 1; /* Поверх всех элементов */
+  left: 50%; /* Центрируем по горизонтали */
+  bottom: 30px; /* Отступ снизу */
+  font-size: 17px; /* Размер шрифта */
+  transform: translateX(-50%); /* Центрируем попап по горизонтали */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень */
+}
+
+.popup.show {
+  visibility: visible; /* Показываем попап */
+  animation: fadein 0.5s, fadeout 0.5s 2.5s; /* Анимация появления и исчезания */
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;} /* Анимация появления */
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;} /* Анимация исчезания */
+}
+
+/* Стили для footer */
+footer {
+  background-color: #333; /* Цвет фона */
+  color: white; /* Цвет текста */
+  text-align: center; /* Выравнивание текста по центру */
+  padding: 20px; /* Внутренние отступы */
+  position: relative; /* Позиционирование */
+  bottom: 0; /* Внизу страницы */
+  width: 100%; /* Ширина */
+}
+
+/* Стили для основного контента */
+#about {
+  padding: 20px; /* Отступы */
+}
+
+#about h1 {
+  font-size: 2em; /* Размер заголовка */
+  margin-bottom: 10px; /* Отступ снизу */
+}
+
+#about p {
+  font-size: 1.2em; /* Размер текста */
+  line-height: 1.5; /* Межстрочный интервал */
+}
