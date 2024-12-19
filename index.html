@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <!-- Устанавливаем кодировку страницы для корректного отображения символов -->
+  <meta charset="UTF-8">
+  
+  <!-- Устанавливаем адаптивность для мобилок -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Подключаем внешний файла css чтобы были стили -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Название сайта в браузере -->
+  <title>Мой интернет-магазин</title>
+</head>
+<body>
+  <!-- Header: шапка сайта  -->
+  <header>
+    <!-- Логотип сайта -->
+    <div class="logo">
+      <h1>Мой Магазин</h1> <!-- Название магазина -->
+    </div>
+    
+    <!-- Навигация: ссылки на страницы сайта -->
+    <nav>
+      <ul>
+        <li><a href="index.html">Каталог</a></li> <!-- Ссылка на главную страницу с каталогом -->
+        <li><a href="about.html">О нас</a></li> <!-- Ссылка на страницу о сайте -->
+        <li><a href="contact.html">Контакты</a></li> <!-- Ссылка на страницу с контактами -->
+      </ul>
+    </nav>
+
+    <!-- Контактная информация и кнопка корзины -->
+    <div class="contact">
+      <a href="tel:+7084816435">+708(481)6435</a> <!-- Ссылка для звонка -->
+      <a href="cart.html"><button>Корзина</button></a> <!-- Кнопка для перехода в корзину -->
+    </div>
+  </header>
+
+  <!-- Основной раздел каталога с товарами -->
+  <section id="catalog" class="catalog">
+    <!-- карточка 1: Букет лилий -->
+    <div class="product-card">
+      <img src="images/lily-bouquet.jpg.jpg" alt="Букет лилий"> <!-- прописанный путь к изображению -->
+      <h3>Букет лилий</h3> <!-- Название товара -->
+      <p>Цена: 12000тг</p> <!-- Цена товара -->
+      <button class="add-to-cart" data-name="Букет лилий" data-price="12000">Купить</button> <!-- Кнопка добавления в корзину с данными о товаре -->
+    </div>
+
+    <!-- карточка 2: Букет роз -->
+    <div class="product-card">
+      <img src="images/rose-bouquet.jpg.jpg" alt="Букет роз">
+      <h3>Букет роз</h3>
+      <p>Цена: 14200тг</p>
+      <button class="add-to-cart" data-name="Букет роз" data-price="14200">Купить</button>
+    </div>
+
+     <!-- карточка 3: Букет тюльпанов -->
+    <div class="product-card">
+      <img src="images/tulip-bouquet.jpg.jpg" alt="Букет тюльпанов">
+      <h3>Букет тюльпанов</h3>
+      <p>Цена: 11200тг</p>
+      <button class="add-to-cart" data-name="Букет тюльпанов" data-price="11200">Купить</button>
+    </div>
+  </section>
+
+  <!-- popup (всплывающее сообщение),  появляется после ПОКУПКИ товара в корзину -->
+  <div id="popup" class="popup">
+    <span class="popuptext" id="popup-content">Товар добавлен в корзину!</span> <!-- Сообщение, которое отображается в попапе -->
+  </div>
+
+  <!-- Подключение JavaScript файла, который управляет функциональностью сайта -->
+  <script src="script.js"></script>
+</body>
+
+<!-- Footer: нижний колонтитул с правами на сайт -->
+<footer>
+  <p>&copy; 2024 Мой интернет-магазин. Все права защищены.</p> <!-- Информация о правах -->
+</footer>
+</html>

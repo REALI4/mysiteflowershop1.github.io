@@ -1,0 +1,293 @@
+/* Устанавливаем плавную прокрутку страницы */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Сброс отступов и внутренних отступов для всех элементов */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Общие стили для body */
+body {
+  font-family: 'Arial', sans-serif; /* Шрифт страницы */
+  background-color: #121212; /* Темный фон */
+  color: white; /* Белый цвет текста */
+  line-height: 1.6; /* Межстрочный интервал */
+}
+
+/* Стили для header */
+header {
+  display: flex; /* Используем flexbox для размещения элементов */
+  justify-content: space-between; /* Распределяем элементы по краям */
+  align-items: center; /* Вертикально выравниваем по центру */
+  padding: 20px 50px; /* Отступы вокруг элементов */
+  background-color: #121212; /* Фон того же темного цвета */
+  border-bottom: 2px solid #800020; /* Нижняя граница */
+}
+
+/* Стили для логотипа в header */
+header .logo h1 {
+  font-size: 32px;
+  color: #800020; /* Цвет логотипа */
+  font-family: 'Courier New', Courier, monospace; /* Шрифт */
+  transition: transform 0.3s; /* Плавное увеличение при наведении */
+}
+
+/* Эффект на логотип при наведении */
+header .logo h1:hover {
+  transform: scale(1.1); /* Увеличение размера */
+}
+
+/* Стили для навигации */
+nav {
+  position: relative;
+}
+
+nav ul {
+  list-style-type: none; /* Убираем маркеры списка */
+  display: flex; /* Размещаем пункты меню в ряд */
+  gap: 40px; /* Расстояние между элементами */
+  padding: 10px 0;
+  margin: 0;
+}
+
+nav ul li {
+  font-size: 16px; /* Размер шрифта для элементов */
+}
+
+nav ul li a {
+  color: white; /* Цвет ссылок */
+  text-decoration: none; /* Убираем подчеркивание */
+  transition: color 0.3s, transform 0.3s; /* Плавный переход для цвета и масштаба */
+  padding: 5px 10px; /* Отступы вокруг текста */
+  border-radius: 5px; /* Скругленные углы */
+}
+
+/* Эффект при наведении на ссылку */
+nav ul li a:hover {
+  color: #800020; /* Изменение цвета текста */
+  background-color: white; /* Белый фон */
+  transform: scale(1.1); /* Увеличение масштаба */
+}
+
+/* Стили для выпадающего меню */
+nav ul .dropdown {
+  position: relative;
+}
+
+nav ul .dropdown-content {
+  display: none; /* Скрытое по умолчанию */
+  position: absolute;
+  background-color: #222; /* Темный фон */
+  min-width: 160px; /* Минимальная ширина */
+  border-radius: 5px; /* Скругленные углы */
+  top: 100%; /* Снизу относительно родителя */
+  left: 0;
+  z-index: 1; /* Обеспечиваем правильный порядок наложения */
+}
+
+nav ul .dropdown:hover .dropdown-content {
+  display: block; /* Показать при наведении */
+}
+
+nav ul .dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block; /* Сделать элементы блочными */
+}
+
+/* Эффект при наведении на элементы выпадающего меню */
+nav ul .dropdown-content a:hover {
+  background-color: #800020; /* Темно-красный фон */
+  color: white;
+}
+
+/* Стили для контактных ссылок и кнопок */
+.contact a {
+  color: white;
+  text-decoration: none;
+  margin-right: 30px;
+}
+
+button {
+  background-color: #850122; /* Фон кнопок */
+  color: white;
+  border: none; /* Без рамки */
+  padding: 12px 25px; /* Отступы внутри кнопки */
+  border-radius: 5px; /* Скругленные углы */
+  cursor: pointer; /* Курсор-указатель */
+  transition: background-color 0.3s; /* Плавный переход для фона */
+}
+
+/* Эффект на кнопке при наведении */
+button:hover {
+  background-color: #660018; /* Изменение фона */
+}
+
+/* Стили для каталога товаров */
+.catalog {
+  display: flex;
+  justify-content: center;
+  gap: 40px; /* Расстояние между карточками */
+  flex-wrap: wrap; /* Перенос элементов при необходимости */
+  padding: 40px 0;
+}
+
+.product-card {
+  background-color: white; /* Белый фон карточки товара */
+  border-radius: 8px; /* Скругленные углы */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень */
+  width: 320px; /* Ширина карточки */
+  text-align: center; /* Текст по центру */
+  padding: 25px; /* Отступы внутри карточки */
+  transition: transform 0.3s ease; /* Плавный переход при изменении масштаба */
+  overflow: hidden; /* Обрезка содержимого, выходящего за пределы */
+}
+
+/* Эффект на карточке товара при наведении */
+.product-card:hover {
+  transform: translateY(-10px); /* Подъем карточки */
+}
+
+.product-card img {
+  width: 100%; /* Ширина изображения */
+  height: 250px; /* Высота изображения */
+  object-fit: cover; /* Покрытие блока изображением */
+  border-radius: 8px; /* Скругленные углы изображения */
+  margin-bottom: 20px; /* Отступ снизу */
+}
+
+.product-card h3 {
+  margin-top: 15px;
+  font-size: 24px;
+  color: #333; /* Цвет названия товара */
+}
+
+.product-card p {
+  font-size: 20px;
+  color: #555; /* Цвет описания товара */
+  margin: 10px 0; /* Отступы сверху и снизу */
+}
+
+.product-card button {
+  background-color: #800020; /* Фон кнопки */
+  color: white;
+  border: none; /* Без рамки */
+  padding: 12px 25px; /* Отступы внутри кнопки */
+  border-radius: 5px; /* Скругленные углы */
+  cursor: pointer; /* Курсор-указатель */
+  transition: background-color 0.3s; /* Плавный переход для фона */
+  font-size: 18px; /* Размер шрифта */
+}
+
+/* Эффект на кнопке при наведении в карточке товара */
+.product-card button:hover {
+  background-color: #660018; /* Изменение фона */
+}
+
+/* Стили для секций О нас и Контакты */
+section#about, section#contact {
+  padding: 40px;
+  background-color: #121212;
+  color: white;
+}
+
+/* Стили для футера */
+footer {
+  text-align: center; /* Текст по центру */
+  padding: 20px;
+  background-color: #222;
+  color: white;
+  font-size: 14px;
+}
+
+/* Стили для всплывающих окон (popup) */
+.popup {
+  visibility: hidden; /* Скрыто по умолчанию */
+  width: 250px; /* Ширина окна */
+  background-color: #800020; /* Цвет фона */
+  color: white;
+  text-align: center; /* Текст по центру */
+  border-radius: 5px;
+  padding: 10px 0;
+  position: fixed; /* Фиксированное положение */
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+  transform: translateX(-50%); /* Центрирование по горизонтали */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень */
+}
+
+.popup.show {
+  visibility: visible; /* Показываем окно */
+  animation: fadein 0.5s, fadeout 0.5s 2.5s; /* Анимация появления и исчезновения */
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;} /* Анимация появления */
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;} /* Анимация исчезновения */
+}
+
+/* Стили для основного контента в секции О нас */
+#about {
+  padding: 20px;
+}
+
+#about h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+#about p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+#about ul {
+  list-style-type: disc; /* Список с маркерами */
+  padding-left: 20px;
+}
+
+#about li {
+  margin-bottom: 10px;
+}
+
+/* Стили для input и textarea */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: #800020; /* Цвет рамки при фокусе */
+}
+
+/* Стили для кнопки отправки формы */
+button[type="submit"] {
+  background-color: #800020;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Эффект на кнопке отправки формы при наведении */
+button[type="submit"]:hover {
+  background-color: #660018;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <!-- Устанавливаем кодировку для корректного отображения текста -->
+  <meta charset="UTF-8">
+  <!-- Устанавливаем адаптивность для мобилок -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Подключаем внешний CSS файл для стилей -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Заголовок страницы, который будет отображаться в браузере -->
+  <title>Корзина</title>
+</head>
+<body>
+  <!-- Шапка сайта с логотипом, меню навигации и контактами -->
+  <header>
+    <div class="logo">
+      <!-- Логотип магазина -->
+      <h1>Мой Магазин</h1>
+    </div>
+    <nav>
+      <!-- Навигационное меню с ссылками на страницы -->
+      <ul>
+        <li><a href="index.html">Каталог</a></li>
+        <li><a href="about.html">О нас</a></li>
+        <li><a href="contact.html">Контакты</a></li>
+      </ul>
+    </nav>
+    <div class="contact">
+      <!-- Контактная информация и ссылка на страницу корзины -->
+      <a href="tel:+7084816435">+708(481)6435</a>
+      <!-- Кнопка для перехода на страницу корзины -->
+      <a href="cart.html"><button>Корзина</button></a>
+    </div>
+  </header>
+
+  <!-- Раздел корзины -->
+  <section id="cart" class="cart">
+    <!-- Заголовок секции -->
+    <h2>Корзина</h2>
+
+    <!-- Контейнер для отображения товаров в корзине -->
+    <div class="cart-items"></div>
+
+    <!-- Блок с общей суммой корзины -->
+    <div class="cart-summary">
+      <p>Общая сумма: <span class="total-price">0тг</span></p>
+    </div>
+
+    <!-- Кнопка оформления заказа -->
+    <button class="checkout">Оформить заказ</button>
+  </section>
+
+  <!-- Подключаем JavaScript файл для функционала корзины -->
+  <script src="cart.js"></script>
+</body>
+<!-- Подвал с информацией о копирайте -->
+<footer>
+  <p>&copy; 2024 Мой интернет-магазин. Все права защищены.</p>
+</footer>
+</html>
